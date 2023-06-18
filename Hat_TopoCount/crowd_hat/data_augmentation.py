@@ -42,7 +42,7 @@ class RandomCrop(object):
     def __call__(self, img_list):
         img, target = img_list[0]
         height, width = img.shape[-2:]
-        count = target['count']
+        count = target['human_num']
         divide_count = augmentation_crop_count(count)
         for i in range(divide_count):
             height_ratio = np.random.randint(int(self.min_h_ratio * 100), int(self.max_h_ratio * 100)) / 100
@@ -66,13 +66,13 @@ class RandomCrop(object):
                 points[:, 1] = points[:, 1] - ymin
                 new_target = copy.deepcopy(target)
                 new_target['points'] = points
-                new_target['count'] = len(points)
+                new_target['human_num'] = len(points)
                 new_target['hw'] = [cnt_height, cnt_width]
                 img_list.append([new_img, new_target])
             else:
                 new_target = copy.deepcopy(target)
                 new_target['hw'] = [cnt_height, cnt_width]
-                new_target['count'] = 0
+                new_target['human_num'] = 0
                 new_target['points'] = torch.tensor([])
                 img_list.append([new_img, new_target])
         return img_list
@@ -87,7 +87,7 @@ class RandomHorizontalFlip(object):
             if idx == 0:
                 image = image.flip(-1)
                 new_target = copy.deepcopy(target)
-                if new_target['count'] > 0:
+                if new_target['human_num'] > 0:
                     points = new_target['points']
                     points[:, 0] = width - points[:, 0]
                     new_target['points'] = points
@@ -96,7 +96,7 @@ class RandomHorizontalFlip(object):
                 points = target['points']
                 if random.random() > 0.5:
                     image = image.flip(-1)
-                    if target['count'] > 0:
+                    if target['human_num'] > 0:
                         points[:, 0] = width - points[:, 0]
                 target['points'] = points
                 new_img_list.append((image, target))
