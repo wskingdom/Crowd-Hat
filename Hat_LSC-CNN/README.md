@@ -4,6 +4,7 @@ Crowd Hat module is a plug-and-play crowd-analysis enhancement network proposed 
 
 Here is the pytorch implementation of Crowd Hat + LSC-CNN, which is a localization-based method proposed in the paper.
 
+
 ## Preparation
 1. Download the checkpoint of LSC-CNN into 'checkpoints/' [One Drive](https://1drv.ms/u/s!AkWHFSjFQ9cDa5yrlv3yUu3Hfg8?e=u1UMhf) 
 2. Download NWPU-Crowd dataset from [NWPU-Crowd Benchmark](https://www.crowdbenchmark.com)
