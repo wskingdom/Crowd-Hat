@@ -1,7 +1,8 @@
-# Crowd Hat + Localization-Based Method TopoCount
+# Crowd Hat + Detection-Based Method LSC-CNN
 
-####Crowd Hat module is a plug-and-play crowd-analysis enhancement network proposed in our paper [Boosting Detection in Crowd Analysis via Underutilized Output Features, CVPR 2023](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf)
-####Here is the pytorch implementation of Crowd Hat + LSC-CNN, which is a localization-based method proposed in the paper.
+Crowd Hat module is a plug-and-play crowd-analysis enhancement network proposed in our paper [Boosting Detection in Crowd Analysis via Underutilized Output Features, CVPR 2023](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf)
+
+Here is the pytorch implementation of Crowd Hat + LSC-CNN, which is a localization-based method proposed in the paper.
 
 ## Preparation
 1. Download the checkpoint of LSC-CNN into 'checkpoints/', which is available at [Google Drive](https://drive.google.com/drive/folders/1qhg3ITOY_qEaNLDfgCP-LOE0Xj1ZH0P7?usp=sharing) 
