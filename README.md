@@ -19,21 +19,12 @@ Jilin University and University of Michigan<br>
 Crowd Hat can be easily added on detection-based methods. Just follow the steps below:
 1. Select a detection-based method and get the pipeline model. You can either train the model on crowd dataset or get the model from corresponding repositories (if any).
 2. Fix the weights of the detection pipeline, do inference across the training dataset, and save the data to the disk.
-   Input Feature
-            feature2d: including the 2D compressed matrices from area sizes and confidence scores, etc.
-            feature1d: including the 1D compressed vectors from area sizes and confidence scores.
-            feature2d_local: split the feature2d into K*K patches corresponding to K*K regions of the input image
-
-   Output Value
-            region_nms_thresholds: K*K optimal NMS threshold for K*K regions of the input image, labeled by linear search and F1-measure evaluation
-            count: the ground truth crowd count over the image
 3. Use the data above to train the Crowd Hat network, including the count decoder and region-adaptive NMS decoder.
 
-
-Currently we provide two implementation on the LSC-CNN and TopoCount.
+Now we provide two pytorch implementation of LSC-CNN and TopoCount. 
 
 ### TODO
-
+The implementation for PSDNN and SDNet will be coming soon. [SDNet](https://github.com/WangyiNTU/Point-supervised-crowd-detection) is officially implemented with Tensorflow.
 
 ### Citation
 If you use this code for your research, please cite our [paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf).
