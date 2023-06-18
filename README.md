@@ -3,7 +3,7 @@
 ### [Project Page](https://fredfyyang.github.io/Crowd-Hat/) |   [Paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf)
 <br>
 
-<img src='pipeline.png' align="right" width=960>  
+<img src='imgs/pipeline.png' align="right" width=960>  
   
 
 <br><br><br>
