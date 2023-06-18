@@ -16,7 +16,7 @@ Jilin University and University of Michigan<br>
  In CVPR 2023
 
 ### Implementation
-Crowd Hat is a plug-and-play module that can be easily added on detection-based method. Just follow the steps below:
+Crowd Hat can be easily added on detection-based method. Just follow the steps below:
 1. Select a detection-based method and get the pipeline model. You can either train the model on crowd dataset or get the model from corresponding repositories (if any).
 2. Use the model to do inference over the training dataset, and save the data to the disk, which is used for the training of Crowd Hat.
 3. 
