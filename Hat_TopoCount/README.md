@@ -4,6 +4,7 @@ Crowd Hat module is a plug-and-play crowd-analysis enhancement network proposed 
 
 This is the pytorch implementation of Crowd Hat + TopoCount, which is a detection-based method proposed in [**Shahira Abousamra, Minh Hoai, Dimitris Samaras, Chao Chen, Localization in the Crowd with Topological Constraints, AAAI 2021.**](https://arxiv.org/pdf/2012.12482.pdf)
 
+
 ## Preparation
 1. Download the checkpoint of TopoCount into 'checkpoints/', which is available at [Google Drive](https://drive.google.com/drive/folders/1qhg3ITOY_qEaNLDfgCP-LOE0Xj1ZH0P7?usp=sharing) 
 2. Download NWPU-Crowd dataset from [NWPU-Crowd Benchmark](https://www.crowdbenchmark.com)
