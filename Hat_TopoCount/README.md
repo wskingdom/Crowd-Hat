@@ -1,8 +1,8 @@
-# Crowd Hat + Localization-Based Method TopoCount
+# Crowd Hat + Detection-Based Method TopoCount
 
-####Crowd Hat module is a plug-and-play crowd-analysis enhancement network proposed in our paper [Boosting Detection in Crowd Analysis via Underutilized Output Features, CVPR 2023](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf)
-####This module is though designed for detection-based methods, we found that it can work well with localization-based method and density-based method. 
-####Here is the pytorch implementation of Crowd Hat + TopoCount, which is a localization-based method proposed in [**Shahira Abousamra, Minh Hoai, Dimitris Samaras, Chao Chen, Localization in the Crowd with Topological Constraints, AAAI 2021.**](https://arxiv.org/pdf/2012.12482.pdf)
+Crowd Hat module is a plug-and-play crowd-analysis enhancement network proposed in our paper [Boosting Detection in Crowd Analysis via Underutilized Output Features, CVPR 2023](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf)
+
+This is the pytorch implementation of Crowd Hat + TopoCount, which is a detection-based method proposed in [**Shahira Abousamra, Minh Hoai, Dimitris Samaras, Chao Chen, Localization in the Crowd with Topological Constraints, AAAI 2021.**](https://arxiv.org/pdf/2012.12482.pdf)
 
 ## Preparation
 1. Download the checkpoint of TopoCount into 'checkpoints/', which is available at [Google Drive](https://drive.google.com/drive/folders/1qhg3ITOY_qEaNLDfgCP-LOE0Xj1ZH0P7?usp=sharing) 
