@@ -15,47 +15,17 @@ This repository contains the official PyTorch implementation of our paper [Boost
 Jilin University and University of Michigan<br>
  In CVPR 2023
 
+### Implementation
+Crowd Hat is a plug-and-play module that can be easily added on detection-based method. Just follow the steps below:
+1. Select a detection-based method and get the pipeline model. You can either train the model on crowd dataset or get the model from corresponding repositories (if any).
+2. Use the model to do inference over the training dataset, and save the data to the disk, which is used for the training of Crowd Hat.
+3. 
 
-## Code coming soon...
 
-<!-- ## Environment
-To setup the environment, please simply run
+Currently we provide two implementation on the LSC-CNN and TopoCount.
 
-```bash
-conda env create -f environment.yml
-conda activate TDIS
-```
+### TODO
 
-## Touch and Go Dataset
-Data can be downloaded from [Touch and Go Dataset](https://drive.google.com/drive/folders/1NDasyshDCL9aaQzxjn_-Q5MBURRT360B).
-
-### Preprocessing
-- Convert Video into frames (within the dataset):
-```bash
-cd touch_and_go
-python extract_frame.py
-```
-
-- Sample frames and train/test split(within the TDIS code):
-```bash
-cd TDIS
-python datasets/touch_and_go/generate_train_test.py  
-```
-We have already provided train/test split of our implementation in the `./datasets/touch_and_go/` folder.
-
-## TDIS Training and Test
-We provide training and evaluation scripts under `./scripts`, please check each bash file before running. Or you can run the code below:
-- Training
-```bash
-python train.py --dataroot path/to/the/dataset --name touch_and_go --dataset_mode touch_and_go --model TDIS 
-```
-The checkpoints will be stored at `./checkpoints/touch_and_go/`
-
-- Test the model
-```bash
-python test.py --dataroot path/to/the/dataset --name touch_and_go --dataset_mode touch_and_go --model TDIS
-```
-The test results will be saved to a html file at `./results/touch_and_go/test_latest/index.html` -->
 
 ### Citation
 If you use this code for your research, please cite our [paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf).
