@@ -15,7 +15,8 @@ This repository contains the official PyTorch implementation of our paper [Boost
 Jilin University and University of Michigan<br>
  In CVPR 2023
 
- This module works on top of the **Head** of detection methods and it can be tailored for each detection Head, thus we call it Crowd **Hat**. In this repository, Hat_LSC-CNN means Crowd Hat implemented on LSC-CNN, likewise the others.
+ This module works on top of the **Head** of detection methods and it can be tailored for each detection Head, thus we call it Crowd **Hat**. 
+ In this repository, Hat_LSC-CNN means Crowd Hat implemented on LSC-CNN, and likewise the others.
 
 ### Implementation
 Crowd Hat can be easily added on detection-based methods. Just follow the steps below:
