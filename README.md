@@ -24,7 +24,7 @@ Crowd Hat can be easily added on detection-based methods. Just follow the steps 
 2. Fix the weights of the detection pipeline, do inference across the training dataset, and save the data to the disk.
 3. Use the data above to train the Crowd Hat network, including the count decoder and region-adaptive NMS decoder.
 
-Now we provide two pytorch implementation of Crowd Hat + LSC-CNN and Crowd Hat + TopoCount. 
+This repository currently provide two pytorch implementation of Hat_LSC-CNN and Hat_TopoCount. 
 
 ### TODO
 Crowd Hat + PSDNN and Crowd Hat + SDNet will be coming soon. [SDNet](https://github.com/WangyiNTU/Point-supervised-crowd-detection) is officially implemented with Tensorflow.
