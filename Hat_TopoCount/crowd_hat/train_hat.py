@@ -74,7 +74,7 @@ def prepare_training_data(img_root, json_root):
                     cfg.train_dic = {}
                     save_name = target['id'] + '_' + str(idx)
                     cfg.global_dic['name'] = save_name
-                    gt_count = target['count']
+                    gt_count = target['human_num']
                     cfg.global_dic['count'] = gt_count
                     img = torchvision.transforms.ToPILImage()(img)
                     img, h_ratio, w_ratio = process_image(img)
