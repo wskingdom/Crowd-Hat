@@ -15,16 +15,18 @@ This repository contains the official PyTorch implementation of our paper [Boost
 Jilin University and University of Michigan<br>
  In CVPR 2023
 
+ This module works on top of the **Head** of detection methods and it can be tailored for each detection Head, thus we call it Crowd **Hat**. In this repository, Hat_LSC-CNN means Crowd Hat implemented on LSC-CNN, likewise the others.
+
 ### Implementation
 Crowd Hat can be easily added on detection-based methods. Just follow the steps below:
 1. Select a detection-based method and get the pipeline model. You can either train the model on crowd dataset or get the model from corresponding repositories (if any).
 2. Fix the weights of the detection pipeline, do inference across the training dataset, and save the data to the disk.
 3. Use the data above to train the Crowd Hat network, including the count decoder and region-adaptive NMS decoder.
 
-Now we provide two pytorch implementation of LSC-CNN and TopoCount. 
+Now we provide two pytorch implementation of Crowd Hat + LSC-CNN and Crowd Hat + TopoCount. 
 
 ### TODO
-The implementation for PSDNN and SDNet will be coming soon. [SDNet](https://github.com/WangyiNTU/Point-supervised-crowd-detection) is officially implemented with Tensorflow.
+Crowd Hat + PSDNN and Crowd Hat + SDNet will be coming soon. [SDNet](https://github.com/WangyiNTU/Point-supervised-crowd-detection) is officially implemented with Tensorflow.
 
 ### Citation
 If you use this code for your research, please cite our [paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf).
@@ -39,5 +41,3 @@ If you use this code for your research, please cite our [paper](https://openacce
 }
 ```
 
-<!-- ### Acknowledgments
-We thank Xiaofeng Guo and Yufan Zhang for the extensive help with the GelSight sensor, and thank Daniel Geng, Yuexi Du and Zhaoying Pan for the helpful discussions. This work was supported in part by Cisco Systems and Wang Chu Chien-Wen Research Scholarship. -->
