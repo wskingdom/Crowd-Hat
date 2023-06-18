@@ -15,7 +15,6 @@ def augmentation_crop_count(count):
 
 
 class Compose(object):
-    """组合多个transform函数"""
 
     def __init__(self, transforms):
         self.transforms = transforms
@@ -27,8 +26,6 @@ class Compose(object):
 
 
 class ToTensor(object):
-    """将PIL图像转为Tensor"""
-
     def __call__(self, img_list):
         image = F.to_tensor(img_list[0][0])
         img_list = [(image, img_list[0][1])]
@@ -88,7 +85,7 @@ class RandomHorizontalFlip(object):
         for (image, target) in img_list:
             height, width = image.shape[-2:]
             if idx == 0:
-                image = image.flip(-1)  # 水平翻转图片
+                image = image.flip(-1)
                 new_target = copy.deepcopy(target)
                 if new_target['human_num'] > 0:
                     points = new_target['points']
@@ -98,7 +95,7 @@ class RandomHorizontalFlip(object):
             else:
                 points = target['points']
                 if random.random() > 0.5:
-                    image = image.flip(-1)  # 水平翻转图片
+                    image = image.flip(-1)
                     if target['human_num'] > 0:
                         points[:, 0] = width - points[:, 0]
                 target['points'] = points
