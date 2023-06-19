@@ -33,11 +33,12 @@ Here is the pytorch implementation of Crowd Hat + LSC-CNN, which is a localizati
 Run the [evaluation.py](crowd_hat/evaluation.py)
 
 Crowd Counting
+
+
+
     evaluate_counting(cfg.img_root,cfg.json_root,0.2)
 
 
-Crowd Localization
-    evaluate_localization(cfg.img_root, cfg.json_root, 0.2)
 
 ## Test
 
@@ -45,6 +46,7 @@ Test on NWPU-Crowd dataset by [evaluation.py](crowd_hat/evaluation.py)
 
 Crowd Counting
     test_nwpu_counting(cfg.nwpu_test)
+
 
 Crowd Localization
     test_nwpu_localization(cfg.nwpu_test)
