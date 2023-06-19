@@ -122,13 +122,10 @@ class Trainset(Dataset):
         id_std = [i for i in range(3110, 3610, 1)]
         id_std[59] = 3098
         test_list = ['nwpu_' + str(idx) + '_0.json' for idx in id_std]
-        # test_list = [name for name in os.listdir(json_root) if 'nwpu' in name
-        #              and int(name.split('.')[0].split('_')[1]) >= 3110
-        #              and name.split('.')[0].split('_')[-1] == '0']
         if mode == "train":
-            id_std = [i for i in range(1, 3610, 1)]
+            id_std = [i for i in range(1, 3610, 1) if id_std not in id_std]
             json_list = [name for name in os.listdir(json_root) if
-                         int(name.split('.')[0].split('_')[1]) in id_std and 'nwpu' in name
+                         int(name.split('.')[0].split('_')[1]) in id_std
                          and int(name.split('.')[0].split('_')[-1]) < 2]
         else:
             json_list = test_list
