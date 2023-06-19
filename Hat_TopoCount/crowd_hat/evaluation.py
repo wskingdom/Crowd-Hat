@@ -18,16 +18,9 @@ from torchvision import transforms
 from unet_vgg4_cc import UnetVggCC
 import matplotlib.pyplot as plt
 import hat_config as cfg
-from hat_utils import compression, compression1d, compression2d
+from hat_utils import compression, compression1d, compression2d,load_crowd_hat
 from my_dataset_test import CrowdDataset
 
-if True:
-    from count_decoder import CountDecoder
-
-    count_model = CountDecoder()
-    count_model.load_state_dict(
-        torch.load(os.path.join(cfg.weights_root, 'count_decoder_2_54.9770.pth'), map_location='cpu'))
-    count_model.cuda().eval()
 
 
 def build_model(model_filename='topocount_nwpu.pth'):
@@ -442,6 +435,7 @@ def detect(img_tensor, model):
     # print(confidences)
     hat_count = -1
     if cfg.use_crowd_hat:
+        count_model = cfg.global_dic['count_model']
         count2d = torch.tensor([[cfg.global_dic['feature2d'][-1]]], dtype=torch.float32).cuda()
         area1d = torch.tensor([[cfg.global_dic['feature1d'][0]]], dtype=torch.float32).cuda()
         hat_count = int(round(count_model(count2d, area1d, mode=3).item()))
@@ -450,6 +444,8 @@ def detect(img_tensor, model):
 
 def evaluate_counting(img_root, json_root, model):
     cfg.use_crowd_hat = True
+    if cfg.use_crowd_hat:
+        load_crowd_hat(os.path.join(cfg.weights_root, 'count_decoder_2_51.0596.pth'))
     id_std = [i for i in range(3110, 3610, 1)]
     id_std[59] = 3098
     img_list = ['nwpu_' + str(idx) + '.jpeg' for idx in id_std]
@@ -468,14 +464,16 @@ def evaluate_counting(img_root, json_root, model):
         cnt += 1
         mae += abs(gt_count - hat_count)
         mse += (gt_count - hat_count) ** 2
-        print(name, gt_count, hat_count, mae / cnt, (mse / cnt) ** 0.5)
+        print(name, gt_count, count, hat_count, mae / cnt, (mse / cnt) ** 0.5)
 
 @torch.no_grad()
 def test_nwpu_counting(img_root,model):
+    cfg.use_crowd_hat = True
+    if cfg.use_crowd_hat:
+        load_crowd_hat(os.path.join(cfg.weights_root, 'count_decoder_2_51.0596.pth'))
     if not os.path.exists(cfg.result_root):
         os.mkdir(cfg.result_root)
     txt = open(os.path.join(cfg.result_root,'hat_topo_counting.txt'), 'w')
-    cfg.use_crowd_hat = True
     # checkpoint_path = 'weights/scale_4_epoch_1.pth'
     id_std = [i for i in range(3610, 5110, 1)]
     for img_id in id_std:
