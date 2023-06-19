@@ -32,8 +32,6 @@ Here is the pytorch implementation of Crowd Hat + LSC-CNN, which is a localizati
 
 Run the [evaluation.py](crowd_hat/evaluation.py)
 
-Crowd Counting
-
 
 
     evaluate_counting(cfg.img_root,cfg.json_root,0.2)
