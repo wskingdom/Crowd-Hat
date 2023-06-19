@@ -10,9 +10,6 @@ import os
 
 
 class L1_loss(torch.nn.Module):
-    """
-    论文中采用的损失函数
-    """
 
     def __init__(self):
         super(L1_loss, self).__init__()
@@ -43,6 +40,20 @@ class ThreshLoss(torch.nn.Module):
         loss *= torch.sqrt(gt_count)
         loss = torch.mean(loss)
         return loss
+
+
+def load_crowd_hat(model_path):
+    try:
+        from count_decoder import CountDecoder
+        count_model = CountDecoder()
+        count_model.load_state_dict(
+            torch.load(model_path, map_location='cpu'))
+        count_model.cuda().eval()
+    except Exception as e:
+        print(e)
+        count_model = None
+        cfg.use_crowd_hat = False
+    cfg.global_dic['count_model'] = count_model
 
 
 def get_f1(pred_p, gt_p, sigma):
