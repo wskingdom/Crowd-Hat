@@ -147,12 +147,6 @@ def train_count_decoder(n, epochs, resume=0):
     assert resume in [0, 1, 2]
     if not os.path.exists(cfg.weights_root):
         os.mkdir(cfg.weights_root)
-    """
-
-       :param n: 训练n次，取最好的
-       :param epochs: 每次训练的epoch数
-
-       """
     val_dataset = Trainset(cfg.training_data_root, "test")
     train_dataset = Trainset(cfg.training_data_root, "train")
     # train_dataset = val_dataset
