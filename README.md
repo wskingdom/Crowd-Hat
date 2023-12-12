@@ -1,5 +1,7 @@
 # Boosting Detection in Crowd Analysis via Underutilized Output Features
 
+
+
 ### [Project Page](https://fredfyyang.github.io/Crowd-Hat/) |   [Paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Wu_Boosting_Detection_in_Crowd_Analysis_via_Underutilized_Output_Features_CVPR_2023_paper.pdf)
 <br>
 
@@ -17,6 +19,9 @@ Jilin University and University of Michigan<br>
 
  This module works on top of the **Head** of detection methods and it can be tailored for each detection Head, thus we call it Crowd **Hat**. 
  In this repository, Hat_LSC-CNN means Crowd Hat implemented on LSC-CNN, and likewise the others.
+
+### Updated 2023.12.12
+This repository will be reorganized into a clearer format these days. 
 
 ### Implementation
 Crowd Hat can be easily added on detection-based methods. Just follow the steps below:
