@@ -20,6 +20,9 @@ Jilin University and University of Michigan<br>
  This module works on top of the **Head** of detection methods and it can be tailored for each detection Head, thus we call it Crowd **Hat**. 
  In this repository, Hat_LSC-CNN means Crowd Hat implemented on LSC-CNN, and likewise the others.
 
+### Updated 2024.4.19
+The authors are currently immersed in various research projects and burdersome curriculums this quarter. The codebase will be updated as soon as possible when time permits. We appreciate your understanding.
+
 ### Updated 2023.12.12
 This repository will be reorganized into a clearer format these days. 
 
